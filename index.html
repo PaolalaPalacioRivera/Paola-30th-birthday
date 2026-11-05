@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Paola's Fest | 30th Birthday Rodeo</title>
+  <meta name="description" content="Estás invitado a Paola's Fest 🤠✨ Sábado 19 de diciembre de 2026.">
+  <meta name="author" content="Paola">
+  <meta name="theme-color" content="#F5E9DE">
+
+  <!-- Open Graph / WhatsApp Preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tu-usuario.github.io/invitacion-paola-30/">
+  <meta property="og:title" content="Paola's Fest | 30th Birthday Rodeo">
+  <meta property="og:description" content="Estás invitado a Paola's Fest 🤠✨ Sábado 19 de diciembre de 2026.">
+  <meta property="og:image" content="https://tu-usuario.github.io/invitacion-paola-30/assets/preview.jpg">
+  <meta property="og:image:alt" content="Invitación Paola's Fest">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Paola's Fest | 30th Birthday Rodeo">
+  <meta name="twitter:description" content="Estás invitado a Paola's Fest 🤠✨ Sábado 19 de diciembre de 2026.">
+  <meta name="twitter:image" content="https://tu-usuario.github.io/invitacion-paola-30/assets/preview.jpg">
+
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+
+  <!-- Tipografías: Rye (Título principal), Josefin Sans (Subtítulos y Frases especiales), Montserrat (Información, Fecha y hora) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Rye&family=Vast+Shadow&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css?v=2">
+</head>
+<body>
+
+  <!-- ELEMENTOS DECORATIVOS AMBIENTALES FLOTANTES (MINI ESTRELLAS SHERIFF 6 PUNTAS Y PÉTALOS SUAVES) -->
+  <div class="ambient-particles" aria-hidden="true">
+    <img src="assets/estrella-sheriff-6-puntas.png" class="particle p-star-6p-1" alt="">
+    <img src="assets/estrella-sheriff-6-puntas.png" class="particle p-star-6p-2" alt="">
+    <img src="assets/estrella-sheriff-6-puntas.png" class="particle p-star-6p-3" alt="">
+    <div class="particle-petal petal-1"></div>
+    <div class="particle-petal petal-2"></div>
+  </div>
+
+  <!-- AUDIO -->
+  <audio id="bg-music" src="assets/musica.mp3" preload="auto" loop></audio>
+
+  <!-- CONTROL FLOTANTE DE MÚSICA -->
+  <aside class="audio-widget hidden" id="audio-control" aria-label="Control de música">
+    <button class="audio-btn" id="music-btn" title="Reproducir / Pausar música" aria-pressed="false">
+      <span class="audio-disc-icon" id="music-disc">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8">
+          <circle cx="12" cy="12" r="10"></circle>
+          <circle cx="12" cy="12" r="3"></circle>
+          <path d="M12 2a10 10 0 0 1 10 10"></path>
+        </svg>
+      </span>
+      <span class="audio-label">Música</span>
+    </button>
+  </aside>
+
+  <!-- BOTÓN VOLVER ARRIBA -->
+  <button id="btn-back-to-top" class="back-to-top" aria-label="Volver arriba" title="Volver al inicio">
+    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- NAVEGACIÓN FLOTANTE -->
+  <nav class="editorial-nav hidden" id="main-nav" aria-label="Navegación principal">
+    <button class="nav-hamburger-btn" id="nav-toggle-btn" type="button" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="nav-track">
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+    </button>
+    <ul class="nav-track" id="nav-track">
+      <li><a href="#inicio" class="nav-item">Inicio</a></li>
+      <li><a href="#cuenta-regresiva" class="nav-item">Cuenta Regresiva</a></li>
+      <li><a href="#dress-code" class="nav-item">Dress Code</a></li>
+      <li><a href="#ubicacion" class="nav-item">Ubicación</a></li>
+      <li><a href="#regalos" class="nav-item">Regalos</a></li>
+      <li><a href="#musica" class="nav-item">Música</a></li>
+      <li><a href="#rsvp" class="nav-item nav-item-rsvp">RSVP</a></li>
+    </ul>
+  </nav>
+
+  <!-- ==========================================
+       1. PANTALLA INICIAL / SOBRE ENTREABIERTO "PAOLA'S FEST" (OPCIÓN 3)
+       ========================================== -->
+  <div class="unboxing-screen" id="envelope-screen" aria-label="Sobre de bienvenida">
+    
+    <!-- Esquinas florales en acuarela en las 4 esquinas de la pantalla -->
+    <div class="op3-screen-corners" aria-hidden="true">
+      <img src="assets/esquina-rosas-tl.png" class="op3-corner op3-corner-tl" alt="">
+      <img src="assets/esquina-rosas-tl.png" class="op3-corner op3-corner-tr" alt="">
+      <img src="assets/esquina-rosas-tl.png" class="op3-corner op3-corner-bl" alt="">
+      <img src="assets/esquina-rosas-tl.png" class="op3-corner op3-corner-br" alt="">
+    </div>
+
+    <!-- Nubes suaves de acuarela en tonos de la paleta -->
+    <div class="watercolor-clouds-layer" aria-hidden="true">
+      <img src="assets/nube-acuarela.png" class="wc-cloud-img cloud-1" alt="">
+      <img src="assets/nube-acuarela.png" class="wc-cloud-img cloud-2" alt="">
+      <img src="assets/nube-acuarela.png" class="wc-cloud-img cloud-3" alt="">
+    </div>
+
+    <!-- Rodadora del desierto animada cruzando el lienzo -->
+    <div class="tumbleweed-drift" aria-hidden="true">
+      <img src="assets/rodadora.png" class="tumbleweed-img" alt="Rodadora del desierto">
+    </div>
+
+    <div class="unboxing-container">
+      
+      <!-- TÍTULO SUPERIOR WESTERN VINTAGE -->
+      <div class="envelope-top-header">
+        <h1 class="western-fest-title">Paola's Fest</h1>
+        <p class="western-fest-subtitle">30TH BIRTHDAY RODEO</p>
+      </div>
+
+      <!-- EL SOBRE ENTREABIERTO CON FORRO FLORAL, TARJETA Y LAZO EN EL CENTRO -->
+      <div class="interactive-envelope-stage" id="envelope-stage">
+        
+        <div class="envelope-pocket">
+          <img 
+            src="assets/sobre-op3-hero.png" 
+            alt="Sobre entreabierto con forro floral, tarjeta con filo dorado, rosas en acuarela y lazo western" 
+            class="envelope-op3-hero-img"
+          >
+
+          <!-- SELLO MEDALLÓN INTERACTIVO DE PAOLA EN EL CENTRO -->
+          <div class="medallion-seal-button" id="seal" title="Toca para abrir">
+            <img 
+              src="assets/sello-paola.png" 
+              alt="Sello de Paola con sombrero negro y flores" 
+              class="medallion-seal-img"
+            >
+            <div class="seal-glow-ring"></div>
+          </div>
+        </div> <!-- /envelope-pocket -->
+
+        <!-- FLECHA ANIMADA Y PLACA DE MADERA "★ CLICK PARA ABRIR ★" -->
+        <div class="envelope-click-prompt" id="btn-open-prompt" role="button" tabindex="0" aria-label="Click para abrir invitación">
+          <svg class="curved-sketch-arrow" viewBox="0 0 32 34" width="24" height="26" fill="none" stroke="#5A3828" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M 16 30 C 17 21, 16 13, 16 5" />
+            <polyline points="10,11 16,4 22,11" />
+          </svg>
+          <div class="wooden-plaque-btn">
+            <img src="assets/placa-click-abrir.png" alt="★ CLICK PARA ABRIR ★" class="wooden-plaque-img">
+          </div>
+        </div>
+
+      </div> <!-- /interactive-envelope-stage -->
+
+    </div> <!-- /unboxing-container -->
+  </div> <!-- /unboxing-screen -->
+
+  <!-- ==========================================
+       LIENZO PRINCIPAL DE LA INVITACIÓN
+       (PAPELERÍA ARTESANAL EN ACUARELA CONTINUA)
+       ========================================== -->
+  <main class="invitation-canvas hidden" id="invitation-content">
+    <article class="fine-stationery-sheet">
+
+      <!-- MARCO PERIMETRAL DORADO CON 4 ESQUINAS DE FILIGRANA -->
+      <div class="sheet-gold-frame" aria-hidden="true">
+        <img src="assets/esquina-filigrana-dorada.png" class="corner-filigree corner-tl" alt="">
+        <img src="assets/esquina-filigrana-dorada.png" class="corner-filigree corner-tr" alt="">
+        <img src="assets/esquina-filigrana-dorada.png" class="corner-filigree corner-bl" alt="">
+        <img src="assets/esquina-filigrana-dorada.png" class="corner-filigree corner-br" alt="">
+      </div>
+
+      <!-- ==========================================
+           2. HERO / PORTADA: PAOLA 30'S BIRTHDAY
+           ========================================== -->
+      <header class="editorial-hero-modular reveal-fade" id="inicio">
+        
+        <!-- Elementos del Hero Separados: Medallón, Faroles y Cowgirl -->
+        <div class="hero-stage-composition">
+          <!-- Medallón Dorado Superior -->
+          <img 
+            src="assets/sello-medallon-dorado.png" 
+            class="hero-medallion-seal" 
+            alt="Sello medallón dorado"
+          >
+
+          <!-- Lámparas / Faroles Izquierdo y Derecho -->
+          <img 
+            src="assets/faroles-izquierdo.png" 
+            class="hero-lanterns hero-lanterns-left" 
+            alt="Faroles izquierdo"
+          >
+          <img 
+            src="assets/faroles-derecho.png" 
+            class="hero-lanterns hero-lanterns-right" 
+            alt="Faroles derecho"
+          >
+
+          <!-- Cowgirl (Paola) -->
+          <img 
+            src="assets/cowgirl_sin_fondo.png" 
+            class="hero-cowgirl-img" 
+            alt="Paola Cowgirl"
+          >
+        </div>
+
+        <!-- Letrero de madera con texto en tipografía Vast Shadow alineado a cada tabla -->
+        <div class="hero-signboard-container">
+          <img src="assets/letrero-tabla.png" class="signboard-wood-planks" alt="Letrero rústico">
+        </div>
+
+        <!-- Divisor dorado superior con rombo -->
+        <img src="assets/divisor-rombo-dorado.png" class="hero-gold-divider" alt="">
+
+        <!-- Bloque de Fecha y Hora -->
+        <div class="hero-datetime-modular">
+          <div class="date-triptych-row">
+            <img src="assets/estrella-destello-dorada.png" class="sparkle-star" alt="">
+            <span class="date-side-label">S&Aacute;BADO</span>
+            <span class="date-divider-pipe">|</span>
+            <span class="date-center-num">19</span>
+            <span class="date-divider-pipe">|</span>
+            <span class="date-side-label">DICIEMBRE</span>
+            <img src="assets/estrella-destello-dorada.png" class="sparkle-star" alt="">
+          </div>
+          <div class="date-time-row-v3">
+            <span>17:00 HRS</span>
+          </div>
+        </div>
+
+        <!-- Divisor dorado inferior con rombo -->
+        <img src="assets/divisor-rombo-dorado.png" class="hero-gold-divider" alt="">
+
+        <!-- Frase Emocional -->
+        <p style="font-weight: 700;" class="section-lead">&ldquo;30 vueltas al sol merecen un buen rodeo.&rdquo;</p>
+
+        <!-- Accesibilidad y SEO -->
+        <h1 class="sr-only">Paola 30's Birthday Rodeo</h1>
+        <p class="sr-only">Sábado 19 de Diciembre de 2026, 17:00 hrs</p>
+
+      </header>
+
+      <!-- ==========================================
+           3. CUENTA REGRESIVA (TARJETA DE PAPELERÍA FINA)
+           ========================================== -->
+      <section class="editorial-section reveal-fade" id="cuenta-regresiva" aria-label="Cuenta regresiva">
+        <div class="stationery-card countdown-card">
+          <h3 class="section-heading">Falta muy poquito…</h3>
+          <p class="section-lead">Alistando los preparativos para la gran noche</p>
+
+          <div class="countdown-editorial-layout">
+            
+            <!-- Contador Digital -->
+            <div class="timer-editorial-row" id="countdown-clock" role="timer" aria-live="polite">
+              <div class="timer-col">
+                <span class="t-num" id="cd-days">00</span>
+                <span class="t-tag">DÍAS</span>
+              </div>
+              <span class="t-colon">:</span>
+              <div class="timer-col">
+                <span class="t-num" id="cd-hours">00</span>
+                <span class="t-tag">HORAS</span>
+              </div>
+              <span class="t-colon">:</span>
+              <div class="timer-col">
+                <span class="t-num" id="cd-minutes">00</span>
+                <span class="t-tag">MINUTOS</span>
+              </div>
+              <span class="t-colon">:</span>
+              <div class="timer-col">
+                <span class="t-num" id="cd-seconds">00</span>
+                <span class="t-tag">SEGUNDOS</span>
+              </div>
+            </div>
+
+            <!-- Avatar con viñeta real de diálogo (con punta hacia el avatar) -->
+            <div class="editorial-sticker-wrap">
+              <div class="speech-bubble-tail-wrap">
+                <span class="sticker-bubble speech-bubble-v2">¡Falta poquito! 🤠🤎</span>
+              </div>
+              <img src="assets/avatar-calendario.png" alt="Paola con calendario" class="sticker-avatar" loading="lazy">
+            </div>
+          </div>
+
+          <div class="countdown-finished-msg hidden" id="cd-finished">
+            <p class="finished-title">¡Hoy es el gran día! ✨</p>
+            <p class="finished-desc">Nos vemos en mi cumpleaños.</p>
+          </div>
+
+          <div class="calendar-action-wrap">
+            <button type="button" class="btn-vintage-capsule" id="btn-add-calendar">
+              <svg class="btn-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8">
+                <rect x="3" y="4" width="18" height="18" rx="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+              <span>AGREGAR A MI CALENDARIO</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- TRANSICIÓN EDITORIAL -->
+      <div class="editorial-flourish-divider" aria-hidden="true">
+        <span class="flourish-line"></span>
+        <span class="flourish-icon">★</span>
+        <span class="flourish-line"></span>
+      </div>
+
+      <!-- ==========================================
+           4. DRESS CODE (LOOKBOOK COWGIRL CHIC)
+           ========================================== -->
+      <section class="editorial-section reveal-fade" id="dress-code" aria-label="Código de vestimenta">
+        
+        <!-- GUIRNALDA FLORAL COLGANTE CON BRISA SUAVE -->
+        <div class="dresscode-hanging-stage" aria-hidden="true">
+          <img src="assets/flores-colgantes-western.png" alt="" class="hanging-garland-img">
+        </div>
+
+        <h3 class="section-heading">Dress Code</h3>
+
+        <p class="dresscode-quote">
+          “Saca tus botas y tu sombrero 🤎”
+        </p>
+
+        <!-- Paleta de inspiración (acorde al evento) -->
+        <div class="swatches-editorial">
+          <span class="swatches-label">PALETA DE INSPIRACIÓN</span>
+          <div class="swatches-row">
+            <div class="swatch-cell">
+              <span class="color-dot" style="background-color: #B87570;"></span>
+              <span class="color-caption">Rosa Viejo</span>
+            </div>
+            <div class="swatch-cell">
+              <span class="color-dot" style="background-color: #D8A99B;"></span>
+              <span class="color-caption">Empolvado</span>
+            </div>
+            <div class="swatch-cell">
+              <span class="color-dot" style="background-color: #EFE0C9;"></span>
+              <span class="color-caption">Crema</span>
+            </div>
+            <div class="swatch-cell">
+              <span class="color-dot" style="background-color: #C59342;"></span>
+              <span class="color-caption">Dorado Espejo</span>
+            </div>
+            <div class="swatch-cell">
+              <span class="color-dot" style="background-color: #777A60;"></span>
+              <span class="color-caption">Eucalipto</span>
+            </div>
+            <div class="swatch-cell">
+              <span class="color-dot" style="background-color: #6B4534;"></span>
+              <span class="color-caption">Cuero</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 Tarjetas de papelería en 3 columnas en desktop / 1 en móvil -->
+        <div class="lookbook-gallery-horizontal">
+          <div class="stationery-card lookbook-card">
+            <img src="assets/sombrero.png" alt="Sombrero vaquero" class="look-img">
+            <h4 class="look-title">Sombreros</h4>
+            <p class="look-desc">En tonos beige, crema, marrón o negro.</p>
+          </div>
+          <div class="stationery-card lookbook-card">
+            <img src="assets/botas.png" alt="Botas rodeo" class="look-img">
+            <h4 class="look-title">Botas Rodeo</h4>
+            <p class="look-desc">Botas vaqueras o camperas con estilo chic.</p>
+          </div>
+        </div>
+
+        <div class="editorial-action-row">
+          <a href="https://mx.pinterest.com/ameliacarrill0/rodeo-outfits/" target="_blank" rel="noopener noreferrer" class="btn-vintage-capsule" id="btn-pinterest">
+            <svg class="btn-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+              <path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345-.09.375-.291 1.199-.332 1.365-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12 0-6.627-5.373-12-12-12z"/>
+            </svg>
+            <span>VER INSPIRACIÓN EN PINTEREST</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- DIVISOR BOTÁNICO -->
+      <div class="editorial-divider-art" aria-hidden="true">
+        <img src="assets/divisor-fin.png" alt="" class="divider-art-img">
+      </div>
+
+      <!-- ==========================================
+           5. UBICACIÓN (SALÓN REAL)
+           ========================================== -->
+      <section class="editorial-section reveal-fade" id="ubicacion" aria-label="Ubicación del evento">
+        <p class="section-kicker">UBICACIÓN</p>
+        
+        <div class="venue-title-row">
+          <h3 class="section-heading">¿Dónde nos vemos?</h3>
+          <div class="venue-sign-wrap">
+            <img src="assets/letrero.png" alt="Letrero Salón" class="venue-inline-sign">
+            <span class="venue-sign-flower-accent" aria-hidden="true">🌸</span>
+          </div>
+        </div>
+
+        <div class="venue-details-wrap">
+          <h4 class="venue-highlight">Salón Jungla Kids</h4>
+          <p class="venue-address-line">Cda. 1er Toltecas #113, Barrio Santa Bárbara, Iztapalapa, CDMX</p>
+        </div>
+
+        <!-- Mapa en tarjeta de papelería fina -->
+        <div class="stationery-card map-stationery-card">
+          <div class="map-fine-art-wrap">
+       <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d235.26147756270979!2d-99.103363!3d19.3611995!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1fe0a580b6b9d%3A0x1e944de9b123b514!2sJungla%20Kids!5e0!3m2!1ses-419!2smx!4v1793846970889!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          </div>
+        </div>
+
+        <div class="editorial-action-row">
+          <a href="https://maps.app.goo.gl/z4UugPik5CNo77EY8" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="btn-vintage-capsule" 
+             id="btn-maps">
+            <svg class="btn-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="3 11 22 2 13 21 11 13 3 11"></polygon>
+            </svg>
+            <span>CÓMO LLEGAR AL EVENTO</span>
+          </a>
+        </div>
+
+        <!-- ==========================================
+             TARJETA DE ESTACIONAMIENTO / PENSIÓN
+             ========================================== -->
+        <div class="stationery-card parking-stationery-card" id="estacionamiento">
+          <div class="parking-card-inner">
+            
+            <!-- Columna Texto y Datos -->
+            <div class="parking-info-content">
+              <span class="parking-badge">🅿️ ESTACIONAMIENTO / PENSIÓN</span>
+              <h4 class="parking-title">¿Vienes en auto?</h4>
+              <p class="parking-lead">Para tu comodidad y tranquilidad durante la fiesta, puedes dejar tu vehículo en esta pensión muy cerca del jardín:</p>
+              
+              <div class="parking-venue-box">
+                <span class="parking-venue-name">Pensión y Estacionamiento</span>
+                <span class="parking-venue-addr">Gral. Anaya 40, San Lucas, Iztapalapa, CDMX</span>
+              </div>
+
+              <div class="parking-action-row">
+                <a href="https://maps.app.goo.gl/Fa35y3gHokJYugLe7?g_st=iw" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="btn-vintage-capsule btn-compact" 
+                   id="btn-parking-maps">
+                  <svg class="btn-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="3 11 22 2 13 21 11 13 3 11"></polygon>
+                  </svg>
+                  <span>CÓMO LLEGAR AL ESTACIONAMIENTO</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Columna Avatar en Carro -->
+            <div class="parking-avatar-wrap">
+              <img 
+                src="assets/avatar-estacionamiento.png" 
+                alt="Paola en auto hacia el estacionamiento" 
+                class="parking-avatar-img"
+                loading="lazy"
+              >
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- TRANSICIÓN FLORAL DELICADA -->
+      <div class="editorial-flourish-divider" aria-hidden="true">
+        <span class="flourish-line"></span>
+        <span class="flourish-icon">✧</span>
+        <span class="flourish-line"></span>
+      </div>
+
+  <!-- DIVISOR -->
+      <div class="editorial-divider-art" aria-hidden="true">
+        <img src="assets/divisor-fin.png" alt="" class="divider-art-img">
+      </div>
+
+      <!-- ==========================================
+           6. MESA DE REGALOS (OPCIONES DE DETALLES)
+           ========================================== -->
+      <section class="editorial-section reveal-fade" id="regalos" aria-label="Mesa de regalos">
+        <p class="section-kicker">DETALLES</p>
+   
+        <p class="gifts-poetic-lead">“Tu presencia es mi mejor regalo.”</p>
+        <p class="gifts-poetic-sub">Pero si deseas tener un detalle conmigo, aquí tienes algunas opciones 🤎</p>
+
+        <div class="gifts-editorial-grid">
+          
+          <!-- OPCIÓN 01: MESA DE REGALOS AMAZON -->
+          <div class="stationery-card gift-grid-card">
+            <span class="gift-index">01</span>
+            <h4 class="gift-name">Mesa de Regalos</h4>
+            <p class="gift-desc">Lista de deseos en Amazon con opciones que me encantan.</p>
+            <div class="gift-action">
+              <a href="https://www.amazon.com.mx/registries/gl/guest-view/AOIQJ701P7WD?ref_=cm_sw_r_apin_ggr-subnav-share_DB967QNS7KSRQVJX6TWQ&language=en-US" target="_blank" rel="noopener noreferrer" class="btn-vintage-capsule btn-compact" id="btn-amazon">
+                <svg class="btn-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                  <line x1="3" y1="6" x2="21" y2="6"></line>
+                  <path d="M16 10a4 4 0 0 1-8 0"></path>
+                </svg>
+                <span>VER LISTA AMAZON</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- OPCIÓN 02: TRANSFERENCIA BANCARIA -->
+          <div class="stationery-card gift-grid-card">
+            <span class="gift-index">02</span>
+            <h4 class="gift-name">Transferencia</h4>
+            <p class="gift-desc">Para mi próxima aventura y proyectos.</p>
+            <div class="bank-details-box">
+              <div class="bank-row">
+                <span class="bank-label">Banco:</span>
+                <span class="bank-val" id="bank-name-display">Nubank</span>
+              </div>
+              <div class="bank-row">
+                <span class="bank-label">Beneficiaria:</span>
+                <span class="bank-val" id="beneficiary-display">ANDREA PAOLA PALACIO RIVERA</span>
+              </div>
+              <div class="bank-row">
+                <span class="bank-label">CLABE:</span>
+                <span class="bank-val bank-code" id="clabe-display">638180000128147580</span>
+              </div>
+            </div>
+            <div class="gift-action">
+              <button type="button" class="btn-vintage-capsule btn-compact" id="btn-copy-clabe">
+                <svg class="btn-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span id="copy-btn-text">COPIAR CLABE</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- OPCIÓN 03: DEPÓSITO EN TIENDAS SIN TARJETA -->
+          <div class="stationery-card gift-grid-card">
+            <span class="gift-index">03</span>
+            <h4 class="gift-name">Depósito en Efectivo</h4>
+            <p class="gift-desc">Sin tarjeta en tiendas: OXXO, Soriana, Kiosko, Chedraui y Farmacias del Ahorro.</p>
+            <div class="bank-details-box">
+              <div class="bank-row">
+                <span class="bank-label">Método:</span>
+                <span class="bank-val">Depósito sin tarjeta</span>
+              </div>
+              <div class="bank-row">
+                <span class="bank-label">Código:</span>
+                <span class="bank-val bank-code" id="cash-code-display">5101 2585 1059 7225</span>
+              </div>
+            </div>
+            <div class="gift-action">
+              <button type="button" class="btn-vintage-capsule btn-compact" id="btn-copy-cash">
+                <svg class="btn-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span id="copy-cash-btn-text">COPIAR CÓDIGO</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- OPCIÓN 04: EL DÍA DEL EVENTO -->
+          <div class="stationery-card gift-grid-card">
+            <span class="gift-index">04</span>
+            <h4 class="gift-name">El día del evento</h4>
+            <p class="gift-desc">También puedes llevar tu detallito o sobre ese día 🤎</p>
+            <div class="gift-day-icon-wrap" aria-hidden="true">
+              <img src="assets/avatar-regalo.png" alt="Paola con regalo" class="gift-avatar-img">
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- DIVISOR BOTÁNICO -->
+      <div class="editorial-divider-art" aria-hidden="true">
+        <img src="assets/divisor-fin.png" alt="" class="divider-art-img">
+      </div>
+
+      <!-- ==========================================
+           PLAYLIST DE MÚSICA DE LA FIESTA
+           ========================================== -->
+      <section class="editorial-section reveal-fade" id="musica" aria-label="Playlist de música de la fiesta">
+        <p class="section-kicker">PLAYLIST</p>
+        <h3 class="section-heading">Música de la Fiesta</h3>
+        <p class="playlist-subheading">“Una probadita del ritmo que nos pondrá a bailar y cantar toda la noche.” 🎶🤠</p>
+
+        <div class="stationery-card playlist-stationery-card">
+          <div class="playlist-card-inner">
+            
+            <!-- Columna Avatar Bailando con Audífonos y Celular -->
+            <div class="playlist-avatar-wrap">
+              <img 
+                src="assets/avatar-playlist.png" 
+                alt="Paola bailando con música y audífonos" 
+                class="playlist-avatar-img"
+                loading="lazy"
+              >
+            </div>
+
+            <!-- Columna Reproductor y Enlace Spotify -->
+            <div class="playlist-info-content">
+              <span class="playlist-badge">🎧 PLAYLIST OFICIAL EN SPOTIFY</span>
+              <h4 class="playlist-title">¡Escúchala antes de la fiesta!</h4>
+            
+              <!-- Reproductor embebido Spotify (Compacto) -->
+              <div class="spotify-embed-wrap">
+                <iframe 
+                  style="border-radius:12px" 
+                  src="https://open.spotify.com/embed/playlist/1v5fmalPAGNzy60RCWwAXG?utm_source=generator&theme=0" 
+                  width="100%" 
+                  height="152" 
+                  frameBorder="0" 
+                  allowfullscreen="" 
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                  loading="lazy"
+                  title="Spotify Playlist Paola 30">
+                </iframe>
+              </div>
+
+              <div class="playlist-action-row">
+                <a href="https://open.spotify.com/playlist/1v5fmalPAGNzy60RCWwAXG?si=SyHL1kC3T2Kkihm4geFSfg&utm_source=whatsapp&pi=mpF2IsrtT5u-0" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="btn-vintage-capsule btn-compact" 
+                   id="btn-spotify">
+                  <svg class="btn-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                    <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.498 17.306c-.215.353-.674.464-1.026.249-2.812-1.718-6.353-2.106-10.523-1.153-.404.093-.804-.16-.897-.564-.093-.404.16-.804.564-.897 4.569-1.044 8.508-.602 11.633 1.309.353.216.464.675.249 1.026zm1.467-3.262c-.27.44-.848.578-1.288.308-3.22-1.979-8.127-2.55-11.935-1.393-.497.151-1.023-.134-1.174-.631-.151-.497.134-1.023.631-1.174 4.354-1.321 9.778-.684 13.458 1.579.44.27.579.847.308 1.288zm.126-3.41c-3.86-2.292-10.228-2.503-13.908-1.385-.592.18-1.222-.154-1.402-.746-.18-.592.154-1.222.746-1.402 4.24-1.288 11.272-1.042 15.698 1.586.533.316.708 1.009.392 1.542-.316.533-1.009.708-1.542.392z"/>
+                  </svg>
+                  <span>ABRIR EN SPOTIFY</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- DIVISOR BOTÁNICO -->
+      <div class="editorial-divider-art" aria-hidden="true">
+        <img src="assets/divisor-fin.png" alt="" class="divider-art-img">
+      </div>
+
+      <!-- ==========================================
+           7. CONFIRMAR ASISTENCIA (RSVP)
+           ========================================== -->
+      <section class="editorial-section reveal-fade" id="rsvp" aria-label="Confirmación de asistencia">
+        <h3 class="section-heading">¿Me acompañas?</h3>
+        <p class="rsvp-editorial-lead">
+          Me encantará celebrar contigo.<br>
+          Por favor confirma tu asistencia para poder preparar todo con mucho cariño.
+        </p>
+
+        <div class="rsvp-editorial-container">
+          
+          <!-- Botones unificados en estilo western vintage -->
+          <div class="rsvp-buttons-horizontal">
+            <a href="https://forms.gle/8AmGXGLFbHqNo5es7" target="_blank" rel="noopener noreferrer" class="btn-vintage-capsule" id="btn-google-form">
+              <svg class="btn-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 11l3 3L22 4"></path>
+                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+              </svg>
+              <span>CONFIRMAR ASISTENCIA</span>
+            </a>
+
+            <a href="#" target="_blank" rel="noopener noreferrer" class="btn-vintage-capsule" id="btn-whatsapp">
+              <svg class="btn-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+              </svg>
+              <span>ENVIAR MENSAJE</span>
+            </a>
+          </div>
+
+          <!-- Avatar con viñeta de diálogo real -->
+          <div class="rsvp-sticker-aside">
+            <div class="speech-bubble-tail-wrap">
+              <span class="sticker-bubble speech-bubble-v2">¿Vienes? 🤠💕</span>
+            </div>
+            <img src="assets/avatar-pose.png" alt="Paola RSVP pose" class="rsvp-avatar-hero" loading="lazy">
+          </div>
+
+        </div>
+      </section>
+
+ <!-- DIVISOR -->
+      <div class="editorial-divider-art" aria-hidden="true">
+        <img src="assets/divisor-fin.png" alt="" class="divider-art-img">
+      </div>
+
+      <!-- ==========================================
+           8. COMPOSICIÓN BOTÁNICA FINAL (BOTAS, FLORES Y CUERDA EN ACUARELA)
+           ========================================== -->
+      <section class="editorial-vignette-wrap reveal-fade" aria-label="Composición floral vaquera">
+        <div class="vignette-artwork-stage">
+          <img 
+            src="assets/botas-flores-cuerda.png" 
+            alt="Botas vaqueras cafés, flores y cuerda en acuarela" 
+            class="vignette-artwork-img"
+            loading="lazy"
+          >
+        </div>
+      </section>
+
+      <!-- ==========================================
+           9. AGRADECIMIENTO Y FRASE FINAL
+           ========================================== -->
+      <section class="editorial-farewell reveal-fade" aria-label="Agradecimiento final">
+        <p class="farewell-poetic-quote">
+          “Que nunca falten motivos para agradecer, sue&ntilde;os por cumplir y momentos que celebrar.”
+        </p>
+
+        <!-- CIERRE CON DIVISOR CORAZÓN -->
+        <div class="final-heart-divider" aria-hidden="true">
+          <img src="assets/divisor-corazon.png" alt="" class="heart-divider-img">
+        </div>
+      </section>
+
+      <!-- ==========================================
+           10. FOOTER
+           ========================================== -->
+      <footer class="editorial-footer">
+        <p class="footer-copy">
+          Made with love for Paola’s Birthday
+          <span class="footer-star">★</span>
+        </p>
+        <p class="footer-date">Diciembre 2026 • Ciudad de México</p>
+      </footer>
+
+    </article> <!-- /fine-stationery-sheet -->
+  </main>
+
+  <script src="script.js?v=2"></script>
+</body>
+</html>

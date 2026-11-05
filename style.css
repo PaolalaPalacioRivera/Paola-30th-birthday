@@ -1,0 +1,2433 @@
+/* ==========================================================================
+   PAOLA'S FEST | 30TH BIRTHDAY RODEO
+   SISTEMA VISUAL DEFINITIVO: Western Femenino Refinado + Rodeo Vintage + Acuarela Editorial
+   Sheriff Elegante de 6 Puntas + Rosa Viejo + Dorado Envejecido + Papelería Fina
+   REGLA ESTRICTA 1: CERO CURSIVAS EN TODA LA INVITACIÓN (font-style: normal)
+   REGLA ESTRICTA 2: CERO FONDOS BLANCOS PUROS EN TARJETAS
+   REGLA ESTRICTA 3: FONDO CONTINUO DE PAPEL ARTESANAL SIN BORDES RECTANGULARES RÍGIDOS
+   ========================================================================== */
+
+:root {
+  /* 1. PALETA DE COLORES DEFINITIVA (REQUERIMIENTO 3) */
+  --color-rose-old: #B87570;        /* Rosa viejo */
+  --color-rose-dusty: #D8A99B;      /* Rosa empolvado */
+  --color-blush-light: #E5C4B7;     /* Blush claro */
+  --color-cream: #EFE0C9;           /* Crema */
+  --color-ivory-paper: #F5E9DE;     /* Marfil / papel */
+  --color-gold-aged: #C59342;       /* Dorado envejecido */
+  --color-gold-light: #D8B469;      /* Dorado claro */
+  --color-leather: #6B4534;         /* Café cuero */
+  --color-chocolate: #3E2923;       /* Chocolate */
+  --color-eucalyptus: #777A60;      /* Verde eucalipto */
+
+  /* 2. SISTEMA DE TARJETAS DE PAPELERÍA (REQUERIMIENTO 38) */
+  --card-paper: #F1E2D6;
+  --card-paper-light: #F6ECE4;
+  --card-border: 1px solid rgba(184, 117, 112, 0.25);
+  --border-capsule: 1.5px solid var(--color-rose-old);
+
+  /* 3. ASIGNACIONES SEMÁNTICAS */
+  --bg-canvas: #F5E9DE;
+  --bg-card: var(--card-paper);
+  --ink-heading: var(--color-chocolate);
+  --ink-body: var(--color-leather);
+  --ink-accent: var(--color-rose-old);
+  --ink-gold: var(--color-gold-aged);
+  --ink-soft: var(--color-rose-dusty);
+
+  /* 4. TIPOGRAFÍAS UNIFICADAS SEGÚN RECOMENDACIÓN DE DISEÑO */
+  --font-western: 'Rye', Georgia, serif;         /* Título principal */
+  --font-subheading: 'Josefin Sans', sans-serif; /* Subtítulos */
+  --font-heading: 'Josefin Sans', sans-serif;    /* Subtítulos / Encabezados */
+  --font-special: 'Josefin Sans', sans-serif;    /* Frases especiales (Medium 500) */
+  --font-body: 'Montserrat', sans-serif;         /* Información (Regular 400) */
+  --font-time: 'Montserrat', sans-serif;         /* Fecha y hora (SemiBold 600) */
+  --font-sans: 'Montserrat', sans-serif;         /* Base sans-serif */
+  --font-serif: 'Josefin Sans', sans-serif;      /* Reemplazo de tipografía cursiva/serif */
+
+  /* 5. SOMBRAS SUTILES DE PAPELERÍA (SIN MANCHAS OSCURAS) */
+  --shadow-paper: 0 10px 30px rgba(62, 41, 35, 0.04);
+  --shadow-card: 0 4px 14px rgba(62, 41, 35, 0.04);
+}
+
+/* ==========================================================================
+   RESET GENERAL Y TIPOGRAFÍA BASE
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-style: normal; /* Regla estricta global: cero cursivas */
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-style: normal;
+  background-color: #2D1A13;
+  background-image: url('assets/madera-fondo-vertical.png');
+  background-repeat: repeat;
+  background-attachment: fixed;
+  background-size: 256px auto;
+  color: var(--ink-body);
+  line-height: 1.6;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.hidden {
+  display: none !important;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-style: normal;
+}
+
+button {
+  font-family: inherit;
+  font-style: normal;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* ==========================================================================
+   ELEMENTOS AMBIENTALES FLOTANTES (ESTRELLAS DE 6 PUNTAS Y PÉTALOS)
+   ========================================================================== */
+.ambient-particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 5;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.16;
+  filter: drop-shadow(0 2px 4px rgba(62, 41, 35, 0.08));
+}
+
+.p-star-6p-1 {
+  top: 14%;
+  left: 3%;
+  width: 28px;
+  animation: floatSheriff1 11s ease-in-out infinite alternate;
+}
+
+.p-star-6p-2 {
+  top: 48%;
+  right: 4%;
+  width: 25px;
+  animation: floatSheriff2 13s ease-in-out infinite alternate;
+}
+
+.p-star-6p-3 {
+  top: 80%;
+  left: 5%;
+  width: 26px;
+  animation: floatSheriff1 12s ease-in-out infinite alternate 1.5s;
+}
+
+@keyframes floatSheriff1 {
+  0% { transform: translateY(0px) rotate(0deg); }
+  100% { transform: translateY(-7px) rotate(3deg); }
+}
+
+@keyframes floatSheriff2 {
+  0% { transform: translateY(0px) rotate(0deg); }
+  100% { transform: translateY(6px) rotate(-3deg); }
+}
+
+/* Pétalos tenues en acuarela rosa viejo */
+.particle-petal {
+  position: absolute;
+  width: 12px;
+  height: 18px;
+  background: radial-gradient(circle at 40% 40%, rgba(216, 169, 155, 0.45) 0%, rgba(184, 117, 112, 0.35) 70%, transparent 100%);
+  border-radius: 50% 50% 50% 10% / 60% 60% 40% 40%;
+  pointer-events: none;
+  opacity: 0.20;
+}
+
+.petal-1 {
+  top: 28%;
+  left: 8%;
+  animation: driftPetal1 18s ease-in-out infinite;
+}
+
+.petal-2 {
+  top: 65%;
+  right: 8%;
+  animation: driftPetal2 22s ease-in-out infinite 3s;
+}
+
+@keyframes driftPetal1 {
+  0% { transform: translate(0, 0) rotate(0deg); opacity: 0; }
+  20% { opacity: 0.22; }
+  80% { opacity: 0.22; }
+  100% { transform: translate(15px, 60px) rotate(45deg); opacity: 0; }
+}
+
+@keyframes driftPetal2 {
+  0% { transform: translate(0, 0) rotate(0deg); opacity: 0; }
+  25% { opacity: 0.20; }
+  80% { opacity: 0.20; }
+  100% { transform: translate(-18px, 70px) rotate(-50deg); opacity: 0; }
+}
+
+/* ==========================================================================
+   WIDGET FLOTANTE DE AUDIO
+   ========================================================================== */
+.audio-widget {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 100;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.audio-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--color-cream);
+  border: var(--border-capsule);
+  padding: 0.45rem 0.95rem;
+  border-radius: 9999px;
+  box-shadow: 0 4px 12px rgba(62, 41, 35, 0.1);
+  color: var(--color-chocolate);
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.25s ease;
+}
+
+.audio-btn:hover {
+  background: var(--color-ivory-paper);
+  border-color: var(--color-gold-aged);
+  transform: translateY(-1px);
+}
+
+.audio-disc-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-rose-old);
+}
+
+.audio-btn.playing .audio-disc-icon {
+  animation: spinSlow 6s linear infinite;
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ==========================================================================
+   BOTÓN VOLVER ARRIBA
+   ========================================================================== */
+.back-to-top {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--color-cream);
+  border: var(--border-capsule);
+  color: var(--color-chocolate);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(62, 41, 35, 0.1);
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background: var(--color-ivory-paper);
+  border-color: var(--color-gold-aged);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   NAVEGACIÓN FLOTANTE
+   ========================================================================== */
+.editorial-nav {
+  position: fixed;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 95;
+  background: rgba(245, 233, 222, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: var(--border-capsule);
+  border-radius: 9999px;
+  padding: 0.35rem 0.6rem;
+  box-shadow: 0 4px 18px rgba(62, 41, 35, 0.08);
+  max-width: 92vw;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.nav-hamburger-btn {
+  display: none;
+}
+
+.nav-track {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 0.2rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.nav-track::-webkit-scrollbar {
+  display: none;
+}
+
+.nav-item {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--color-chocolate);
+  padding: 0.35rem 0.75rem;
+  border-radius: 9999px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.nav-item:hover, .nav-item.active {
+  background: var(--color-cream);
+  color: var(--color-rose-old);
+}
+
+.nav-item-rsvp {
+  color: var(--color-rose-old);
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   1. PANTALLA INICIAL: SOBRE ENTREABIERTO "PAOLA'S FEST" (OPCIÓN 3)
+   ========================================================================== */
+.unboxing-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #F6EAD9;
+  background-image: 
+    radial-gradient(circle at 50% 45%, rgba(255, 250, 242, 0.78) 0%, rgba(246, 234, 217, 0.45) 55%, rgba(208, 179, 148, 0.32) 100%),
+    radial-gradient(circle at 15% 20%, rgba(239, 224, 201, 0.45) 0%, transparent 60%);
+  box-shadow: inset 0 0 115px rgba(98, 63, 44, 0.16);
+  overflow: hidden;
+  transition: opacity 0.9s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.9s ease;
+}
+
+.unboxing-screen.opened {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* 4 Esquinas Florales en Acuarela de la Pantalla */
+.op3-screen-corners {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 6;
+  overflow: hidden;
+}
+
+.op3-corner {
+  position: absolute;
+  width: clamp(120px, 17.5vw, 245px);
+  height: auto;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0.95;
+}
+
+.op3-corner-tl {
+  top: 0;
+  left: 0;
+}
+
+.op3-corner-tr {
+  top: 0;
+  right: 0;
+  transform: scaleX(-1);
+}
+
+.op3-corner-bl {
+  bottom: 0;
+  left: 0;
+  transform: scaleY(-1);
+}
+
+.op3-corner-br {
+  bottom: 0;
+  right: 0;
+  transform: scale(-1, -1);
+}
+
+.watercolor-clouds-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.wc-cloud-img {
+  position: absolute;
+  opacity: 0.20;
+  filter: blur(2px);
+  pointer-events: none;
+}
+
+.cloud-1 {
+  top: 5%;
+  left: -5%;
+  width: 480px;
+  animation: driftCloud1 32s ease-in-out infinite alternate;
+}
+
+.cloud-2 {
+  bottom: 8%;
+  right: -8%;
+  width: 520px;
+  animation: driftCloud2 38s ease-in-out infinite alternate;
+}
+
+.cloud-3 {
+  top: 40%;
+  right: 15%;
+  width: 360px;
+  opacity: 0.14;
+}
+
+@keyframes driftCloud1 {
+  from { transform: translateX(0); }
+  to { transform: translateX(35px); }
+}
+
+@keyframes driftCloud2 {
+  from { transform: translateX(0); }
+  to { transform: translateX(-40px); }
+}
+
+.tumbleweed-drift {
+  position: absolute;
+  bottom: 2%;
+  left: -120px;
+  pointer-events: none;
+  z-index: 5;
+  animation: rollTumbleweed 20s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+}
+
+.tumbleweed-img {
+  width: 60px;
+  height: auto;
+  opacity: 0.35;
+  animation: spinTumbleweed 2.5s linear infinite;
+}
+
+@keyframes rollTumbleweed {
+  0% { left: -100px; transform: translateY(0); }
+  20% { transform: translateY(-15px); }
+  40% { transform: translateY(0); }
+  60% { transform: translateY(-20px); }
+  80% { transform: translateY(0); }
+  100% { left: 110vw; transform: translateY(-10px); }
+}
+
+@keyframes spinTumbleweed {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.unboxing-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 20;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  max-height: 100dvh;
+}
+
+.envelope-top-header {
+  text-align: center;
+  margin-bottom: 0.25rem;
+  position: relative;
+  z-index: 22;
+}
+
+.western-fest-title {
+  font-family: var(--font-western);
+  font-size: clamp(2.35rem, 5.8vw, 3.65rem);
+  font-style: normal;
+  color: var(--color-chocolate);
+  line-height: 1.08;
+  letter-spacing: 2px;
+  text-shadow: 2px 3px 0px rgba(229, 196, 183, 0.65);
+}
+
+.western-fest-subtitle {
+  font-family: var(--font-sans);
+  font-size: clamp(0.75rem, 1.8vw, 0.9rem);
+  letter-spacing: 3.8px;
+  color: var(--color-rose-old);
+  font-weight: 600;
+  font-style: normal;
+  margin-top: 0.25rem;
+}
+
+/* ESCENARIO DEL SOBRE ENTREABIERTO CON FLORES Y LAZO */
+.interactive-envelope-stage {
+  position: relative;
+  width: min(92vw, 650px);
+  max-width: calc((100dvh - 180px) * 1.48);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.envelope-pocket {
+  position: relative;
+  width: 100%;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), filter 0.45s ease;
+}
+
+.interactive-envelope-stage:hover .envelope-pocket {
+  transform: translateY(-5px);
+}
+
+.unboxing-screen.animating .envelope-pocket {
+  transform: translateY(-16px) scale(1.04);
+  filter: drop-shadow(0 18px 36px rgba(184, 117, 112, 0.28));
+}
+
+.envelope-op3-hero-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  user-select: none;
+  filter: drop-shadow(0 12px 26px rgba(62, 41, 35, 0.12));
+}
+
+/* SELLO MEDALLÓN INTERACTIVO EN EL CENTRO DEL SOBRE */
+.medallion-seal-button {
+  position: absolute;
+  top: 52.26%;
+  left: 50%;
+  width: 17.6%;
+  aspect-ratio: 1 / 1;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  z-index: 8;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease;
+}
+
+.medallion-seal-button:hover,
+.interactive-envelope-stage:hover .medallion-seal-button {
+  transform: translate(-50%, -50%) scale(1.06);
+  box-shadow: 0 0 28px rgba(197, 147, 66, 0.45);
+}
+
+.medallion-seal-img {
+  width: 78.2%;
+  height: 78.2%;
+  object-fit: cover;
+  object-position: center 42%;
+  border-radius: 50%;
+  background-color: #FBF5EC;
+  border: 2px solid #B8904E;
+  box-shadow: inset 0 0 6px rgba(62, 41, 35, 0.12);
+  display: block;
+}
+
+.seal-glow-ring {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border-radius: 50%;
+  border: 1.5px dashed var(--color-rose-old);
+  animation: rotateRing 14s linear infinite;
+  pointer-events: none;
+  opacity: 0.72;
+}
+
+@keyframes rotateRing {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* FLECHA Y PLACA DE MADERA "★ CLICK PARA ABRIR ★" */
+.envelope-click-prompt {
+  position: relative;
+  margin-top: clamp(-40px, -6%, -18px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.1rem;
+  cursor: pointer;
+  z-index: 15;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.envelope-click-prompt:hover,
+.interactive-envelope-stage:hover .envelope-click-prompt {
+  transform: translateY(-3px) scale(1.03);
+}
+
+.curved-sketch-arrow {
+  filter: drop-shadow(0 1px 2px rgba(62, 41, 35, 0.18));
+  animation: bounceArrowUp 1.8s ease-in-out infinite;
+  display: block;
+}
+
+@keyframes bounceArrowUp {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.wooden-plaque-btn {
+  width: clamp(195px, 34vw, 265px);
+  transition: filter 0.3s ease;
+}
+
+.envelope-click-prompt:hover .wooden-plaque-btn {
+  filter: drop-shadow(0 6px 14px rgba(62, 41, 35, 0.22)) brightness(1.03);
+}
+
+.wooden-plaque-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  user-select: none;
+}
+
+/* ==========================================================================
+   LIENZO PRINCIPAL: PAPELERÍA ARTESANAL CONTINUA
+   (INTEGRACIÓN TOTAL CON EL FONDO, SIN MARCOS RÍGIDOS NI RECTÁNGULOS BLANCOS)
+   ========================================================================== */
+.invitation-canvas {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1.5rem 0.8rem 5rem;
+background: #ffffff8c;
+}
+
+.fine-stationery-sheet {
+  max-width: 620px;
+  width: 100%;
+  background: rgba(253, 248, 242, 0.94);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1.5px solid rgba(197, 147, 66, 0.6);
+  border-radius: 20px;
+  box-shadow: 0 24px 60px rgba(25, 14, 10, 0.55), 0 4px 16px rgba(25, 14, 10, 0.3);
+  position: relative;
+  overflow: visible;
+  padding: 2.4rem 1.6rem 3rem;
+  margin: 2.5% auto;
+}
+
+/* MARCO PERIMETRAL DORADO Y FILIGRANAS EN LAS 4 ESQUINAS */
+.sheet-gold-frame {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  border: 2.5px solid #be9758;
+  border-radius: 14px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.corner-filigree {
+  position: absolute;
+  width: 30%;
+  height: auto;
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+.corner-filigree.corner-tl {
+  top: 0;
+  left: 0;
+}
+
+.corner-filigree.corner-tr {
+  top: 0;
+  right: 0;
+  transform: scaleX(-1);
+}
+
+.corner-filigree.corner-bl {
+  bottom: 0;
+  left: 0;
+  transform: scaleY(-1);
+}
+
+.corner-filigree.corner-br {
+  bottom: 0;
+  right: 0;
+  transform: scale(-1, -1);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ==========================================================================
+   2. HERO EDITORIAL MODULAR: PORTADA PAOLA 30'S BIRTHDAY
+   ========================================================================== */
+.editorial-hero-modular {
+  text-align: center;
+  padding: 0.5rem 0 1rem;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Portada Hero: Elementos separados (Medallón, Faroles y Cowgirl) */
+.hero-stage-composition {
+  position: relative;
+  width: 100%;
+  max-width: 540px;
+  aspect-ratio: 1872 / 1220;
+  margin: -1.2rem auto 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  overflow: visible;
+}
+
+/* 1. Medallón Dorado Superior */
+.hero-medallion-seal {
+  position: absolute;
+  top: -18%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 15%;
+  height: auto;
+  z-index: 10;
+  pointer-events: none;
+  filter: drop-shadow(0 4px 10px rgba(60, 35, 15, 0.28));
+}
+
+/* 2. Lámparas / Faroles Colgantes Izquierdo y Derecho */
+.hero-lanterns {
+  position: absolute;
+  top: -12px;
+  height: 70%;
+  width: auto;
+  z-index: 2;
+  pointer-events: none;
+  filter: drop-shadow(0 4px 12px rgba(45, 25, 18, 0.16));
+}
+
+.hero-lanterns-left {
+  left: 1.5%;
+}
+
+.hero-lanterns-right {
+  right: 1.5%;
+}
+
+/* 3. Cowgirl (Paola) */
+.hero-cowgirl-img {
+  position: absolute;
+ top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  width: auto;
+  max-width: 70%;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 16px rgba(45, 25, 18, 0.18));
+}
+
+/* Letrero de Tablas de Madera con Texto */
+.hero-signboard-container {
+  position: relative;
+  width: 75%;
+  max-width: 480px;
+  margin: 28px auto 0.8rem;
+  z-index: 5;
+}
+
+.signboard-wood-planks {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 6px 14px rgba(35, 20, 14, 0.28));
+}
+
+.signboard-text-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+justify-content: center;
+  pointer-events: none;
+}
+
+.sign-spacer-top {
+  height: 23%;
+}
+
+.sign-row {
+  height: 17.5%;
+  display: flex;
+flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sign-spacer-bottom {
+  height: 24.5%;
+}
+
+.sign-line {
+  font-family: 'Vast Shadow', serif;
+  color: #fbeee1;
+  text-shadow: 2px 2px 0px #3E2415, -1px -1px 0px #3E2415, 1px -1px 0px #3E2415, -1px 1px 0px #3E2415, 0px 3px 5px rgba(0,0,0,0.5);
+  letter-spacing: 2px;
+  line-height: 1;
+  text-align: center;
+  font-weight: 400;
+  display: inline-block;
+}
+
+.sign-name {
+  font-size: clamp(1.10rem, 3.2vw, 2.4rem);
+  letter-spacing: clamp(1.5px, 0.8vw, 2.5px);
+}
+
+.sign-age {
+  font-size: clamp(1.25rem, 3.8vw, 1.6rem);
+  letter-spacing: clamp(2px, 1vw, 3.5px);
+}
+
+.sign-event {
+  font-size: clamp(0.95rem, 2.8vw, 1.2rem);
+  letter-spacing: clamp(1px, 0.6vw, 2px);
+}
+
+/* Separadores Dorados */
+.hero-gold-divider {
+  width: 90%;
+  max-width: 440px;
+  height: auto;
+  display: block;
+  margin: 0.6rem auto;
+  opacity: 0.85;
+}
+
+/* Bloque Fecha y Hora */
+.hero-datetime-modular {
+  width: 100%;
+  max-width: 440px;
+  margin: 0.2rem auto;
+  text-align: center;
+}
+
+.date-triptych-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.2rem, 1.2vw, 0.65rem);
+  flex-wrap: nowrap;
+  max-width: 100%;
+}
+
+.sparkle-star {
+  width: clamp(12px, 3.2vw, 20px);
+  height: auto;
+  opacity: 0.9;
+  flex-shrink: 0;
+}
+
+.date-side-label {
+  font-family: var(--font-time);
+  font-weight: 600;
+  font-size: clamp(0.72rem, 2.3vw, 1.05rem);
+  color: #3E2415;
+  letter-spacing: clamp(1px, 0.4vw, 2px);
+  text-transform: uppercase;
+}
+
+.date-divider-pipe {
+  font-family: var(--font-time);
+  font-weight: 400;
+  font-size: clamp(0.85rem, 2.6vw, 1.2rem);
+  color: #C59342;
+  opacity: 0.8;
+  flex-shrink: 0;
+}
+
+.date-center-num {
+  font-family: var(--font-time);
+  font-weight: 700;
+  font-size: clamp(1.6rem, 4.8vw, 2.4rem);
+  color: #8C533A;
+  letter-spacing: 0.5px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.date-time-row-v3 {
+  margin-top: 0.25rem;
+}
+
+.date-time-row-v3 span {
+  font-family: var(--font-time);
+  font-weight: 600;
+  font-size: clamp(0.82rem, 2.3vw, 1.05rem);
+  color: #6B4534;
+  letter-spacing: clamp(1.5px, 0.5vw, 2.5px);
+  text-transform: uppercase;
+}
+
+.hero-poetic-quote {
+  font-family: var(--font-special);
+  font-style: normal;
+  font-size: clamp(1.2rem, 3.8vw, 1.45rem);
+  font-weight: 500;
+  color: var(--ink-heading);
+  margin: 1.2rem auto 0.4rem;
+  max-width: 440px;
+  padding: 0 0.8rem;
+  line-height: 1.45;
+  letter-spacing: 0.3px;
+}
+
+.editorial-divider-art {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1.8rem auto 1.4rem;
+  max-width: 240px;
+}
+
+.divider-art-img {
+  width: 100%;
+  height: auto;
+  opacity: 0.75;
+}
+
+/* ==========================================================================
+   BOTONES UNIFICADOS EN FORMA DE CÁPSULA (REQUERIMIENTO 22)
+   Cápsula + Fondo Crema + Borde Rosa Viejo + Texto Café + Sombra Mínima
+   (APLICA A TODOS LOS BOTONES, INCLUIDO WHATSAPP SIN VERDE)
+   ========================================================================== */
+.btn-vintage-capsule {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.72rem 1.4rem;
+  border-radius: 9999px;
+  background-color: var(--color-cream);
+  border: 1.5px solid var(--color-rose-old);
+  color: var(--color-chocolate);
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  font-style: normal;
+  box-shadow: 0 2px 6px rgba(62, 41, 35, 0.05);
+  transition: all 0.25s ease;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-vintage-capsule:hover {
+  background-color: var(--color-ivory-paper);
+  border-color: var(--color-gold-aged);
+  color: var(--color-chocolate);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(62, 41, 35, 0.08);
+}
+
+.btn-vintage-capsule:active {
+  transform: translateY(0);
+}
+
+.btn-vintage-capsule .btn-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-rose-old);
+  transition: color 0.25s ease;
+}
+
+.btn-vintage-capsule:hover .btn-icon {
+  color: var(--color-gold-aged);
+}
+
+.btn-compact {
+  padding: 0.55rem 1.1rem;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+}
+
+/* Botón de copiado feedback */
+.btn-vintage-capsule.copied {
+  background-color: var(--color-rose-old) !important;
+  color: #FFFDF9 !important;
+  border-color: var(--color-rose-old) !important;
+}
+
+.btn-vintage-capsule.copied .btn-icon {
+  color: #FFFDF9 !important;
+}
+
+/* ==========================================================================
+   SISTEMA DE TARJETAS DE PAPELERÍA FINA (.stationery-card)
+   REGLA ESTRICTA: NINGUNA TARJETA TIENE FONDO BLANCO PURO
+   ========================================================================== */
+.stationery-card {
+  background-color: var(--card-paper);
+  background-image: linear-gradient(180deg, var(--card-paper-light) 0%, var(--card-paper) 100%);
+  border: var(--card-border);
+  border-radius: 12px;
+  box-shadow: var(--shadow-card);
+  padding: 1.5rem 1.2rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.stationery-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(62, 41, 35, 0.07);
+}
+
+/* ENCABEZADOS DE SECCIÓN */
+.editorial-section {
+  text-align: center;
+  padding: 1.4rem 0.2rem;
+  position: relative;
+}
+
+.section-kicker {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  font-style: normal;
+  color: var(--color-rose-old);
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.section-heading {
+  font-family: var(--font-subheading);
+  font-size: clamp(1.65rem, 4.8vw, 2.15rem);
+  font-weight: 600;
+  font-style: normal;
+  color: var(--ink-heading);
+  letter-spacing: 0.6px;
+  margin-bottom: 0.25rem;
+}
+
+.section-lead {
+  font-family: var(--font-body);
+  font-style: normal;
+  font-size: 0.98rem;
+  font-weight: 400;
+  color: var(--color-rose-dusty);
+  margin-bottom: 1.5rem;
+}
+
+/* ==========================================================================
+   3. CUENTA REGRESIVA (TARJETA DE PAPEL ARTESANAL)
+   ========================================================================== */
+.countdown-card {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 1.8rem 1.2rem;
+}
+
+.countdown-editorial-layout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  margin: 0 auto 1.4rem;
+  flex-wrap: wrap;
+}
+
+.timer-editorial-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.4rem;
+  width: 100%;
+  max-width: 310px;
+}
+
+.timer-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+  flex: 1;
+}
+
+.t-num {
+  font-family: var(--font-western);
+  font-size: clamp(1.8rem, 5.5vw, 2.5rem);
+  font-style: normal;
+  color: var(--color-chocolate);
+  line-height: 1;
+}
+
+.t-tag {
+  font-family: var(--font-time);
+  font-size: clamp(0.58rem, 1.8vw, 0.68rem);
+  letter-spacing: 1.2px;
+  color: var(--color-rose-old);
+  font-weight: 600;
+  font-style: normal;
+  margin-top: 0.35rem;
+}
+
+.t-colon {
+  font-family: var(--font-western);
+  font-size: clamp(1.3rem, 3.8vw, 1.7rem);
+  color: var(--color-rose-old);
+  opacity: 0.5;
+  transform: translateY(-2px);
+}
+
+.countdown-finished-msg {
+  text-align: center;
+  padding: 1.2rem;
+  background: var(--color-cream);
+  border-radius: 8px;
+  border: 1px solid var(--color-rose-old);
+  margin-bottom: 1.4rem;
+}
+
+.finished-title {
+  font-family: var(--font-subheading);
+  font-size: 1.35rem;
+  font-weight: 600;
+  font-style: normal;
+  color: var(--color-chocolate);
+}
+
+.finished-desc {
+  font-family: var(--font-body);
+  font-style: normal;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--color-leather);
+}
+
+.calendar-action-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.6rem;
+}
+
+/* AVATAR Y VIÑETA DE DIÁLOGO DEL COUNTDOWN */
+.editorial-sticker-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.speech-bubble-tail-wrap {
+  position: relative;
+  margin-bottom: 6px;
+}
+
+.speech-bubble-v2 {
+  display: inline-block;
+  background: var(--card-paper-light);
+  border: 1px solid var(--color-rose-old);
+  border-radius: 16px;
+  padding: 0.35rem 0.85rem;
+  font-family: var(--font-subheading);
+  font-style: normal;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: var(--color-chocolate);
+  box-shadow: 0 2px 6px rgba(62, 41, 35, 0.05);
+  white-space: nowrap;
+  position: relative;
+}
+
+/* Punta triangular de la viñeta hacia la cabeza del avatar */
+.speech-bubble-v2::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid var(--card-paper-light);
+  z-index: 2;
+}
+
+.speech-bubble-v2::before {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 7px solid var(--color-rose-old);
+  z-index: 1;
+}
+
+.sticker-avatar {
+  width: 95px;
+  height: auto;
+  filter: drop-shadow(0 4px 8px rgba(62, 41, 35, 0.1));
+  transition: transform 0.3s ease;
+}
+
+.sticker-avatar:hover {
+  transform: scale(1.04);
+}
+
+/* ==========================================================================
+   4. DRESS CODE (LOOKBOOK COWGIRL CHIC)
+   ========================================================================== */
+/* GUIRNALDA FLORAL COLGANTE CON MOVIMIENTO SUAVE DE BRISA (REQUERIMIENTO 18, 35) */
+.dresscode-hanging-stage {
+  max-width: 520px;
+  margin: -1.2rem auto 0.8rem;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.hanging-garland-img {
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  display: block;
+  animation: garlandBreeze 12s ease-in-out infinite alternate;
+  transform-origin: 50% 0%;
+  filter: drop-shadow(0 4px 10px rgba(62, 41, 35, 0.08));
+}
+
+@keyframes garlandBreeze {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(2px) rotate(0.3deg);
+  }
+  100% {
+    transform: translateY(0) rotate(-0.2deg);
+  }
+}
+
+.dresscode-hero-title {
+  font-family: var(--font-western);
+  font-size: clamp(2rem, 6vw, 2.6rem);
+  font-style: normal;
+  letter-spacing: 3px;
+  color: var(--color-chocolate);
+  margin-bottom: 0.3rem;
+}
+
+.dresscode-quote {
+  font-family: var(--font-special);
+  font-style: normal;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--color-rose-old);
+  margin-bottom: 0.2rem;
+  line-height: 1.4;
+}
+
+.dresscode-sub {
+  font-family: var(--font-body);
+  font-style: normal;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--color-leather);
+  margin-bottom: 1.6rem;
+}
+
+.swatches-editorial {
+  margin: 1.2rem auto 1.8rem;
+}
+
+.swatches-label {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  letter-spacing: 2px;
+  color: var(--color-rose-old);
+  font-weight: 600;
+  font-style: normal;
+  display: block;
+  margin-bottom: 0.8rem;
+}
+
+.swatches-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+}
+
+.swatch-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.color-dot {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid rgba(62, 41, 35, 0.18);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.color-caption {
+  font-family: var(--font-body);
+  font-size: 0.76rem;
+  font-weight: 500;
+  font-style: normal;
+  color: var(--color-leather);
+}
+
+.lookbook-gallery-horizontal {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+  max-width: 580px;
+  margin: 1.5rem auto 1.8rem;
+}
+
+.lookbook-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.4rem 0.8rem;
+}
+
+.lookbook-card .look-img {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  margin-bottom: 0.6rem;
+  filter: drop-shadow(0 3px 6px rgba(62, 41, 35, 0.08));
+}
+
+.lookbook-card .look-title {
+  font-family: var(--font-subheading);
+  font-size: 1.15rem;
+  font-weight: 600;
+  font-style: normal;
+  color: var(--ink-heading);
+  margin-bottom: 0.3rem;
+  letter-spacing: 0.3px;
+}
+
+.lookbook-card .look-desc {
+  font-family: var(--font-body);
+  font-style: normal;
+  font-size: 0.84rem;
+  font-weight: 400;
+  color: var(--color-leather);
+  line-height: 1.35;
+}
+
+.editorial-action-row {
+  margin-top: 0.5rem;
+}
+
+/* ==========================================================================
+   5. UBICACIÓN (LETRERO INLINE A LA DERECHA DEL TÍTULO - REQUERIMIENTO 20)
+   ========================================================================== */
+.venue-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 0.2rem;
+}
+
+.venue-sign-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.venue-inline-sign {
+  width: 48px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(62, 41, 35, 0.12));
+}
+
+.venue-sign-flower-accent {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  font-size: 0.75rem;
+  filter: drop-shadow(0 1px 2px rgba(62, 41, 35, 0.15));
+}
+
+.venue-details-wrap {
+  margin-bottom: 1.2rem;
+}
+
+.venue-highlight {
+  font-family: var(--font-subheading);
+  font-size: 1.45rem;
+  font-weight: 600;
+  font-style: normal;
+  color: var(--ink-heading);
+  line-height: 1.2;
+  letter-spacing: 0.4px;
+}
+
+.venue-address-line {
+  font-family: var(--font-body);
+  font-style: normal;
+  font-size: 0.88rem;
+  font-weight: 400;
+  color: var(--color-rose-dusty);
+  margin-top: 0.25rem;
+}
+
+.map-stationery-card {
+  max-width: 540px;
+  margin: 0 auto 1.4rem;
+  padding: 0.6rem;
+  overflow: hidden;
+}
+
+.map-fine-art-wrap {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  line-height: 0;
+  border: 1px solid rgba(184, 117, 112, 0.2);
+}
+
+/* ==========================================================================
+   5.1 ESTACIONAMIENTO / PENSIÓN (COMPLEMENTO UBICACIÓN)
+   ========================================================================== */
+.parking-stationery-card {
+  max-width: 540px;
+  margin: 1.8rem auto 1.4rem;
+  background: rgba(255, 253, 250, 0.95);
+  border: 1.5px solid rgba(197, 147, 66, 0.45);
+  border-radius: 16px;
+  padding: 1.6rem 1.4rem;
+  box-shadow: 0 8px 24px rgba(62, 41, 35, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.parking-card-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem;
+}
+
+.parking-info-content {
+  flex: 1;
+  text-align: left;
+}
+
+.parking-badge {
+  display: inline-block;
+  font-family: var(--font-time);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--color-chocolate);
+  background: rgba(229, 196, 183, 0.45);
+  padding: 0.28rem 0.65rem;
+  border-radius: 20px;
+  margin-bottom: 0.45rem;
+  border: 1px solid rgba(197, 147, 66, 0.35);
+}
+
+.parking-title {
+  font-family: var(--font-subheading);
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: var(--color-chocolate);
+  margin: 0.2rem 0 0.4rem;
+  line-height: 1.25;
+}
+
+.parking-lead {
+  font-family: var(--font-body);
+  font-size: 0.86rem;
+  font-weight: 400;
+  color: #6a5348;
+  line-height: 1.45;
+  margin: 0 0 0.75rem;
+}
+
+.parking-venue-box {
+  background: rgba(245, 233, 222, 0.55);
+  border-left: 3px solid #be9758;
+  padding: 0.55rem 0.85rem;
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 1rem;
+}
+
+.parking-venue-name {
+  display: block;
+  font-family: var(--font-subheading);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-chocolate);
+}
+
+.parking-venue-addr {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: #7d5e4f;
+  margin-top: 0.15rem;
+}
+
+.parking-action-row {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.parking-avatar-wrap {
+  flex: 0 0 175px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.parking-avatar-img {
+  width: 175px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 14px rgba(62, 41, 35, 0.16));
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.parking-avatar-img:hover {
+  transform: scale(1.06) rotate(-2deg);
+}
+
+@media (max-width: 520px) {
+  .parking-card-inner {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 1rem;
+  }
+  .parking-info-content {
+    text-align: center;
+  }
+  .parking-action-row {
+    justify-content: center;
+  }
+  .parking-avatar-wrap {
+    flex: 0 0 auto;
+  }
+  .parking-avatar-img {
+    width: 160px;
+  }
+}
+
+/* ==========================================================================
+   6. MESA DE REGALOS (3 TARJETAS CONCISAS DE PAPEL VINTAGE)
+   ========================================================================== */
+.gifts-poetic-lead {
+  font-family: var(--font-special);
+  font-size: 1.35rem;
+  font-weight: 500;
+  font-style: normal;
+  color: var(--ink-heading);
+  margin-bottom: 0.2rem;
+  letter-spacing: 0.3px;
+}
+
+.gifts-poetic-sub {
+  font-family: var(--font-body);
+  font-style: normal;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--color-rose-dusty);
+  margin-bottom: 1.6rem;
+  max-width: 440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gifts-editorial-triptych,
+.gifts-editorial-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.1rem;
+  max-width: 620px;
+  margin: 1.4rem auto 0;
+}
+
+.gift-triptych-card,
+.gift-grid-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.35rem 0.9rem;
+  min-height: 100%;
+}
+
+.gift-triptych-card .gift-index,
+.gift-grid-card .gift-index {
+  font-family: var(--font-western);
+  font-size: 1.15rem;
+  color: var(--color-rose-old);
+  margin-bottom: 0.3rem;
+}
+
+.gift-triptych-card .gift-name,
+.gift-grid-card .gift-name {
+  font-family: var(--font-subheading);
+  font-size: 1.15rem;
+  font-weight: 600;
+  font-style: normal;
+  color: var(--ink-heading);
+  margin-bottom: 0.3rem;
+  letter-spacing: 0.3px;
+}
+
+.gift-triptych-card .gift-desc,
+.gift-grid-card .gift-desc {
+  font-family: var(--font-body);
+  font-style: normal;
+  font-size: 0.84rem;
+  font-weight: 400;
+  color: var(--color-leather);
+  line-height: 1.35;
+  margin-bottom: 0.8rem;
+  flex: 1;
+}
+
+.bank-details-box {
+  background: rgba(245, 233, 222, 0.65);
+  border: 1px dashed rgba(197, 147, 66, 0.55);
+  border-radius: 8px;
+  padding: 0.55rem 0.7rem;
+  width: 100%;
+  margin: 0.4rem 0 0.85rem;
+  text-align: left;
+}
+
+.bank-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.4rem;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+
+.bank-row:last-child {
+  margin-bottom: 0;
+}
+
+.bank-label {
+  font-weight: 600;
+  color: var(--color-chocolate);
+  white-space: nowrap;
+}
+
+.bank-val {
+  color: var(--ink-heading);
+  text-align: right;
+  word-break: break-word;
+}
+
+.bank-val.bank-code {
+  font-family: monospace;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-chocolate);
+  letter-spacing: 0.3px;
+}
+
+.gift-avatar-img {
+  width: auto;
+  height: 95px;
+  max-width: 90px;
+  object-fit: contain;
+  margin: 0.3rem auto 0.6rem;
+  filter: drop-shadow(0 4px 8px rgba(62, 41, 35, 0.12));
+  transition: transform 0.3s ease;
+}
+
+.gift-avatar-img:hover {
+  transform: scale(1.05);
+}
+
+.bank-inline-meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  font-style: normal;
+  color: var(--ink-heading);
+  background: rgba(239, 224, 201, 0.45);
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  margin-bottom: 0.8rem;
+  word-break: break-all;
+}
+
+.meta-sep {
+  color: var(--color-rose-old);
+}
+
+.gift-triptych-card .gift-action {
+  width: 100%;
+  margin-top: auto;
+}
+
+.gift-day-icon-wrap {
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+.gift-vintage-symbol {
+  font-size: 1.6rem;
+}
+
+/* ==========================================================================
+   6.1 PLAYLIST DE MÚSICA DE LA FIESTA (SPOTIFY)
+   ========================================================================== */
+.playlist-subheading {
+  font-family: var(--font-special);
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--color-rose-dusty);
+  margin-bottom: 1.2rem;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.45;
+  letter-spacing: 0.2px;
+}
+
+.playlist-stationery-card {
+  max-width: 550px;
+  margin: 1.4rem auto 1.6rem;
+  background: rgba(255, 253, 250, 0.95);
+  border: 1.5px solid rgba(197, 147, 66, 0.45);
+  border-radius: 16px;
+  padding: 1.6rem 1.4rem;
+  box-shadow: 0 8px 24px rgba(62, 41, 35, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.playlist-card-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.4rem;
+}
+
+.playlist-avatar-wrap {
+  flex: 0 0 170px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.playlist-avatar-img {
+  width: 130px;
+  height: auto;
+  max-height: 250px;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 14px rgba(62, 41, 35, 0.16));
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.playlist-avatar-img:hover {
+  transform: scale(1.05) rotate(2deg);
+}
+
+.playlist-info-content {
+  flex: 1;
+  text-align: left;
+}
+
+.playlist-badge {
+  display: inline-block;
+  font-family: var(--font-time);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--color-chocolate);
+  background: rgba(229, 196, 183, 0.45);
+  padding: 0.28rem 0.65rem;
+  border-radius: 20px;
+  margin-bottom: 0.45rem;
+  border: 1px solid rgba(197, 147, 66, 0.35);
+}
+
+.playlist-title {
+  font-family: var(--font-subheading);
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: var(--color-chocolate);
+  margin: 0.2rem 0 0.4rem;
+  line-height: 1.25;
+}
+
+.playlist-lead {
+  font-family: var(--font-body);
+  font-size: 0.86rem;
+  font-weight: 400;
+  color: #6a5348;
+  line-height: 1.45;
+  margin: 0 0 0.75rem;
+}
+
+.spotify-embed-wrap {
+  margin: 0.5rem 0 0.85rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.playlist-action-row {
+  display: flex;
+  justify-content: flex-start;
+}
+
+@media (max-width: 540px) {
+  .playlist-card-inner {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 1.2rem;
+  }
+  .playlist-info-content {
+    text-align: center;
+  }
+  .playlist-action-row {
+    justify-content: center;
+  }
+  .playlist-avatar-wrap {
+    flex: 0 0 auto;
+  }
+  .playlist-avatar-img {
+    width: 135px;
+  }
+}
+
+/* ==========================================================================
+   7. RSVP (AVATAR PROTAGONISTA SECUNDARIO + VIÑETA DE DIÁLOGO)
+   ========================================================================== */
+.rsvp-editorial-lead {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-style: normal;
+  font-weight: 400;
+  color: var(--ink-body);
+  margin-bottom: 1.8rem;
+  line-height: 1.6;
+}
+
+.rsvp-editorial-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+.rsvp-buttons-horizontal {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.rsvp-buttons-horizontal .btn-vintage-capsule {
+  min-width: 220px;
+}
+
+/* AVATAR DE RSVP DESTACADO (GRANDE Y PROTAGONISTA SECUNDARIO - REQUERIMIENTO 25) */
+.rsvp-sticker-aside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 0.4rem;
+}
+
+.rsvp-sticker-aside .speech-bubble-tail-wrap {
+  margin-bottom: 4px;
+}
+
+.rsvp-avatar-hero {
+  width: auto;
+  height: 145px; /* Rango solicitado en desktop: 110-150px */
+  max-width: 130px;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 14px rgba(62, 41, 35, 0.12));
+  transition: transform 0.3s ease;
+}
+
+.rsvp-avatar-hero:hover {
+  transform: scale(1.04);
+}
+
+/* ==========================================================================
+   8. COMPOSICIÓN BOTÁNICA FINAL (BOTAS + FLORES + CUERDA - REQUERIMIENTO 26, 27)
+   ========================================================================== */
+.editorial-vignette-wrap {
+  text-align: center;
+  padding: 1.6rem 0.5rem 0.8rem;
+}
+
+.vignette-artwork-stage {
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.vignette-artwork-img {
+  width: 100%;
+  max-width: 460px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 16px rgba(62, 41, 35, 0.08));
+  transition: transform 0.4s ease;
+}
+
+.vignette-artwork-img:hover {
+  transform: scale(1.02);
+}
+
+/* ==========================================================================
+   9. AGRADECIMIENTO Y FRASE FINAL (CERO CURSIVAS - REQUERIMIENTO 28)
+   ========================================================================== */
+.editorial-farewell {
+  text-align: center;
+  padding: 1.4rem 0.5rem 1.8rem;
+}
+
+.farewell-poetic-quote {
+  font-family: var(--font-special);
+  font-style: normal;
+  font-size: clamp(1.2rem, 3.8vw, 1.5rem);
+  font-weight: 500;
+  color: var(--color-chocolate);
+  line-height: 1.6;
+  max-width: 520px;
+  margin: 0.8rem auto 1.4rem;
+  text-align: center;
+  letter-spacing: 0.3px;
+}
+
+.final-heart-divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem auto 0;
+  max-width: 240px;
+}
+
+.heart-divider-img {
+  width: 100%;
+  height: auto;
+  opacity: 0.75;
+}
+
+/* ==========================================================================
+   10. FOOTER
+   ========================================================================== */
+.editorial-footer {
+  text-align: center;
+  padding: 2rem 0.5rem 1rem;
+  border-top: 1px solid rgba(184, 117, 112, 0.2);
+  margin-top: 1.5rem;
+}
+
+.footer-copy {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--color-chocolate);
+  margin-bottom: 0.2rem;
+  letter-spacing: 0.2px;
+}
+
+.footer-star {
+  color: var(--color-gold-aged);
+  font-size: 0.8rem;
+}
+
+.footer-date {
+  font-family: var(--font-time);
+  font-size: 0.7rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--color-rose-old);
+}
+
+/* ==========================================================================
+   ANIMACIONES DE SCROLL (REVEAL)
+   ========================================================================== */
+.reveal-fade {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-fade.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   RESPONSIVE (PRIORIDAD MÓVIL: 360px, 390px, 430px, TABLET, DESKTOP)
+   ========================================================================== */
+@media (max-width: 600px) {
+  .invitation-canvas {
+    padding: 1rem 0.4rem 4.5rem;
+    overflow-x: hidden;
+  }
+
+.rsvp-editorial-container{
+flex-direction: column;
+}
+
+  .fine-stationery-sheet {
+    padding: 1.6rem 0.7rem 2.2rem;
+    border-radius: 14px;
+    margin: 0.5rem auto;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .stationery-card {
+    padding: 1.2rem 0.75rem;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .sheet-gold-frame {
+    top: 6px;
+    left: 6px;
+    right: 6px;
+    bottom: 6px;
+  }
+
+  .western-fest-title {
+    font-size: clamp(2.05rem, 8.5vw, 2.5rem);
+  }
+
+  .op3-corner {
+    width: clamp(95px, 28vw, 145px);
+  }
+
+  .interactive-envelope-stage {
+    width: min(96vw, 430px);
+    max-width: 96vw;
+  }
+
+  .envelope-click-prompt {
+    margin-top: -20px;
+  }
+
+  .wooden-plaque-btn {
+    width: clamp(175px, 52vw, 225px);
+  }
+
+  .hero-stage-composition {
+    max-width: 100%;
+    aspect-ratio: 1872 / 1220;
+    margin: -0.3rem auto 0;
+  }
+
+  .hero-cowgirl-img {
+    max-width: 70%;
+    bottom: -32px;
+  }
+
+  .hero-signboard-container {
+    width: 76%;
+    max-width: 250px;
+    margin: 50px auto 0.6rem;
+  }
+
+  .countdown-card {
+    padding: 1.4rem 0.8rem;
+  }
+
+  .timer-editorial-row {
+    gap: 0.25rem;
+    max-width: 290px;
+  }
+
+  .countdown-editorial-layout {
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .sheet-corner-decor {
+    width: 68px;
+    top: -2px;
+  }
+
+  .sheet-corner-tl {
+    left: -2px;
+  }
+
+  .sheet-corner-tr {
+    right: -2px;
+  }
+
+  .dresscode-hanging-stage {
+    max-width: 320px;
+    margin: -0.8rem auto 0.5rem;
+  }
+
+  .hanging-garland-img {
+    max-width: 290px;
+  }
+
+  .lookbook-gallery-horizontal {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .gifts-editorial-triptych,
+  .gifts-editorial-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .rsvp-buttons-horizontal {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .rsvp-buttons-horizontal .btn-vintage-capsule {
+    width: 100%;
+  }
+
+  .rsvp-avatar-hero {
+    height: 115px;
+    max-width: 105px;
+  }
+
+  .editorial-nav {
+    top: 14px;
+    right: 14px;
+    left: auto;
+    bottom: auto;
+    transform: none;
+    padding: 0;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .nav-hamburger-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4.5px;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: rgba(245, 233, 222, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: var(--border-capsule);
+    box-shadow: 0 4px 14px rgba(62, 41, 35, 0.16);
+    cursor: pointer;
+    transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+  }
+
+  .nav-hamburger-btn:hover,
+  .editorial-nav.is-open .nav-hamburger-btn {
+    background: var(--color-ivory-paper);
+    border-color: var(--color-gold-aged);
+  }
+
+  .hamburger-bar {
+    display: block;
+    width: 18px;
+    height: 2px;
+    background-color: var(--color-chocolate);
+    border-radius: 2px;
+    transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.2s ease;
+  }
+
+  .editorial-nav.is-open .hamburger-bar:nth-child(1) {
+    transform: translateY(6.5px) rotate(45deg);
+  }
+
+  .editorial-nav.is-open .hamburger-bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .editorial-nav.is-open .hamburger-bar:nth-child(3) {
+    transform: translateY(-6.5px) rotate(-45deg);
+  }
+
+  .nav-track {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.2rem;
+    min-width: 195px;
+    background: rgba(245, 233, 222, 0.97);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1.5px solid var(--color-rose-old);
+    border-radius: 16px;
+    padding: 0.55rem;
+    box-shadow: 0 12px 32px rgba(62, 41, 35, 0.22);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-8px) scale(0.96);
+    transform-origin: top right;
+    transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), visibility 0.25s ease;
+  }
+
+  .editorial-nav.is-open .nav-track {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+  }
+
+  .nav-item {
+    display: block;
+    font-size: 0.78rem;
+    padding: 0.55rem 0.85rem;
+    border-radius: 10px;
+    text-align: left;
+  }
+
+  .back-to-top {
+    bottom: 20px;
+    width: 38px;
+    height: 38px;
+  }
+
+  .audio-widget {
+    bottom: 20px;
+    left: 15px;
+    right: auto;
+  }
+
+  .audio-label {
+    display: none;
+  }
+
+  .audio-btn {
+    padding: 0.4rem;
+    border-radius: 50%;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero-signboard-container {
+    width: 80%;
+    max-width: 235px;
+    margin: 50px auto 0.5rem;
+  }
+
+.rsvp-editorial-container{
+flex-direction: column;
+}
+
+  .sign-name {
+    font-size: 1.05rem;
+    letter-spacing: 1px;
+  }
+
+  .sign-age {
+    font-size: 1.15rem;
+    letter-spacing: 1.5px;
+  }
+
+  .sign-event {
+    font-size: 0.88rem;
+    letter-spacing: 1px;
+  }
+
+  .timer-editorial-row {
+    gap: 0.2rem;
+    max-width: 260px;
+  }
+
+  .t-num {
+    font-size: 1.55rem;
+  }
+
+  .t-tag {
+    font-size: 0.52rem;
+    letter-spacing: 0.8px;
+  }
+
+  .countdown-card {
+    padding: 1.2rem 0.6rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .invitation-canvas {
+    padding: 3.5rem 1.5rem 7rem;
+  }
+
+  .fine-stationery-sheet {
+    padding: 3rem 2.4rem;
+  }
+
+  .sticker-avatar {
+    width: 105px;
+  }
+}
+
+/* ==========================================================================
+   PREFERS-REDUCED-MOTION (REQUERIMIENTO 36)
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .particle, .tumbleweed-drift, .wc-cloud-img, .particle-petal, .hanging-garland-img {
+    display: none !important;
+    animation: none !important;
+  }
+
+  .reveal-fade {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
